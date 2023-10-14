@@ -9,7 +9,7 @@ from linebot.exceptions import (
 from linebot.models import *
 
 #import from another script
-from responseText import apply
+from responseText import messageApply
 #======python的函數庫==========
 import tempfile, os
 import datetime
@@ -55,7 +55,7 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    msg = event.message.text
+    msg = messageApply(event.message.text)
     GPT_answer = GPT_response(msg)
     print(GPT_answer)
     line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))

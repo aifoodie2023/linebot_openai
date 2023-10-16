@@ -10,7 +10,6 @@ from linebot.models import *
 
 #import from another script
 from responseText import messageApply
-
 #======python的函數庫==========
 import tempfile, os
 import datetime
@@ -26,6 +25,7 @@ line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 # OPENAI API Key初始化設定
 openai.api_key = os.getenv('OPENAI_API_KEY')
+
 
 def GPT_response(text):
     # 接收回應
@@ -51,19 +51,14 @@ def callback():
         abort(400)
     return 'OK'
 
-def lineBotApiReply(evemt,message):
-    line_bot_api.reply_message(evemt, message)
-
 
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    msg = messageApply(event, event.message.text)
+    msg = messageApply(event.message.text)
     GPT_answer = GPT_response(msg)
     print(GPT_answer)
-    replyMessage = TextSendMessage(event, GPT_answer)
-    lineBotApiReply(replyEvent,  replyMessage)
-
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))
 
 @handler.add(PostbackEvent)
 def handle_message(event):

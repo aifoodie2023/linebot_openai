@@ -1,11 +1,10 @@
 from chooseMenu import eatingHabits
-from app import lineBotApiReply
+#from app import lineBotApiReply
 
-def messageApply(event, msg):
+def messageApply(msg):
     if msg == '個人喜好':
         #葷/全素/蛋奶素
-        habit = eatingHabits()
-        lineBotApiReply(event.reply_token, habit)
+        msg = eatingHabits()
         #請輸入不吃的食物
         ##儲存
         ######msg = '你好'

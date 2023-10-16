@@ -57,10 +57,14 @@ def lineBotApiReply(evemt, message):
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    msg = messageApply(event, event.message.text)
+    msg = messageApply(event.message.text)
+    '''
     GPT_answer = GPT_response(msg)
     print(GPT_answer)
     lineBotApiReply(event.reply_token, TextSendMessage(GPT_answer))
+    '''
+    lineBotApiReply(event.reply_token , msg)
+
 
 @handler.add(PostbackEvent)
 def handle_message(event):

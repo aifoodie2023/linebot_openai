@@ -1,4 +1,4 @@
-
+from linebot.models import *
 
 def eatingHabits():
     buttons_template_message = TemplateSendMessage(

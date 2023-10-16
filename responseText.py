@@ -1,4 +1,4 @@
-from chooseMenu import eatingHabits
+from app import eatingHabits
 #from app import lineBotApiReply
 
 def messageApply(msg):

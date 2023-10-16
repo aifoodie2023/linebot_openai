@@ -10,10 +10,11 @@ from linebot.models import *
 
 #import from another script
 from responseText import messageApply
+from openAi import GPT_response 
 #======python的函數庫==========
 import tempfile, os
 import datetime
-import openai
+#import openai
 import time
 #======python的函數庫==========
 
@@ -26,7 +27,7 @@ handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 # OPENAI API Key初始化設定
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-
+'''
 def GPT_response(text):
     # 接收回應
     response = openai.Completion.create(model="text-davinci-003", prompt=text, temperature=0.5, max_tokens=500)
@@ -34,7 +35,7 @@ def GPT_response(text):
     # 重組回應
     answer = response['choices'][0]['text'].replace('。','')
     return answer
-
+'''
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -51,14 +52,19 @@ def callback():
         abort(400)
     return 'OK'
 
+def lineBotApiReply(evemt,message):
+    line_bot_api.reply_message(evemt, message)
+
 
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    msg = messageApply(event.message.text)
+    msg = messageApply(event, event.message.text)
     GPT_answer = GPT_response(msg)
     print(GPT_answer)
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))
+    replyMessage = TextSendMessage(event, GPT_answer)
+    lineBotApiReply(replyEvent,  replyMessage)
+
 
 @handler.add(PostbackEvent)
 def handle_message(event):

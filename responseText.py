@@ -1,9 +1,18 @@
-def messageApply(msg):
+from linebot import (
+    LineBotApi, WebhookHandler
+)
+
+from openAi import GPT_response 
+from chooseMenu import eatingHabits
+
+def messageApply(event, msg):
     if msg == '個人喜好':
         #葷/全素/蛋奶素
+        habit = eatingHabits()
+        lineBotApiReply(event.reply_token, habit)
         #請輸入不吃的食物
         ##儲存
-        msg = '你好'
+        ######msg = '你好'
     elif msg == '料理生成':
         #請選擇下方選單中的服務進行食譜生成
         #早餐

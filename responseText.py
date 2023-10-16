@@ -4,6 +4,7 @@ from linebot import (
 
 from openAi import GPT_response 
 from chooseMenu import eatingHabits
+from app import lineBotApiReply
 
 def messageApply(event, msg):
     if msg == '個人喜好':

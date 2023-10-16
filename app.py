@@ -51,14 +51,16 @@ def callback():
         abort(400)
     return 'OK'
 
+def lineBotApiReply(evemt, message):
+    line_bot_api.reply_message(evemt, message)
 
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    msg = messageApply(event.message.text)
+    msg = messageApply(event, event.message.text)
     GPT_answer = GPT_response(msg)
     print(GPT_answer)
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))
+    lineBotApiReply(event.reply_token, TextSendMessage(GPT_answer))
 
 @handler.add(PostbackEvent)
 def handle_message(event):

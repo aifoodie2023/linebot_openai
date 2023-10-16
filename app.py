@@ -85,7 +85,30 @@ def lineBotApiReply(evemt, message):
 def handle_message(event):
     msg = messageApply(event.message.text)
     if msg == '個人喜好':
-        msg = eatingHabits()
+        buttons_template_message = TemplateSendMessage(
+        alt_text = "股票資訊",
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    #thumbnail_image_url ="https://chenchenhouse.com//wp-content/uploads/2020/10/%E5%9C%96%E7%89%871-2.png",
+                    title = "請輸入您的個人喜好",
+                    #text ="請點選想查詢的股票資訊",
+                    actions =[
+                        MessageAction(
+                            label= "葷",
+                            text= "葷" ),
+                        MessageAction(
+                            label= "全素",
+                            text= "全素" ),
+                        MessageAction(
+                            label= "蛋奶素",
+                            text= "蛋奶素" ),
+                        ]
+                    )
+                ]
+            )
+        )
+        msg = buttons_template_message
     '''
     GPT_answer = GPT_response(msg)
     print(GPT_answer)

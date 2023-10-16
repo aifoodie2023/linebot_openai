@@ -108,13 +108,15 @@ def handle_message(event):
                 ]
             )
         )
-        msg = buttons_template_message
+        reply = buttons_template_message
+    else:
+        reply = TextSendMessage(msg)
     '''
     GPT_answer = GPT_response(msg)
     print(GPT_answer)
     lineBotApiReply(event.reply_token, TextSendMessage(GPT_answer))
     '''
-    lineBotApiReply(event.reply_token , TextSendMessage(msg))
+    lineBotApiReply(event.reply_token , reply)
 
 
 @handler.add(PostbackEvent)

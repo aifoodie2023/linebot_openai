@@ -1,3 +1,4 @@
+'''
 import openai
 
 def GPT_response(text):
@@ -7,3 +8,4 @@ def GPT_response(text):
     # 重組回應
     answer = response['choices'][0]['text'].replace('。','')
     return answer
+'''

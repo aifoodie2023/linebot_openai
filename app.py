@@ -10,12 +10,11 @@ from linebot.models import *
 
 #import from another script
 from responseText import messageApply
-#from openAi import GPT_response 
-
+from openAi import GPT_response 
 #======python的函數庫==========
 import tempfile, os
 import datetime
-import openai
+#import openai
 import time
 #======python的函數庫==========
 
@@ -28,7 +27,7 @@ handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 # OPENAI API Key初始化設定
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-
+'''
 def GPT_response(text):
     # 接收回應
     response = openai.Completion.create(model="text-davinci-003", prompt=text, temperature=0.5, max_tokens=500)
@@ -36,7 +35,7 @@ def GPT_response(text):
     # 重組回應
     answer = response['choices'][0]['text'].replace('。','')
     return answer
-
+'''
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])

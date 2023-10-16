@@ -1,3 +1,4 @@
+'''
 from linebot.models import *
 
 def eatingHabits():
@@ -28,7 +29,7 @@ def eatingHabits():
     #else:
         #
 
-
+'''
 
 def whichMeal():
     if "股票 " in message:#部分符合

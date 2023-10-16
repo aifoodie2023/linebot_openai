@@ -84,25 +84,25 @@ def lineBotApiReply(evemt, message):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = messageApply(event.message.text)
-    if msg == '個人喜好':
+    if  '個人喜好' in msg :
         buttons_template_message = TemplateSendMessage(
-        alt_text = "股票資訊",
+        alt_text = "葷素",
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    #thumbnail_image_url ="https://chenchenhouse.com//wp-content/uploads/2020/10/%E5%9C%96%E7%89%871-2.png",
+                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
                     title = "請輸入您的個人喜好",
-                    #text ="請點選想查詢的股票資訊",
+                    text ="請點你的飲食習慣",
                     actions =[
                         MessageAction(
                             label= "葷",
-                            text= "葷" ),
+                            text= "吃葷" ),
                         MessageAction(
                             label= "全素",
-                            text= "全素" ),
+                            text= "吃吃全素" ),
                         MessageAction(
                             label= "蛋奶素",
-                            text= "蛋奶素" ),
+                            text= "吃蛋奶素" ),
                         ]
                     )
                 ]
@@ -110,7 +110,9 @@ def handle_message(event):
         )
         reply = buttons_template_message
     else:
-        reply = TextSendMessage(msg)
+        GPT_answer = GPT_response(msg)
+        print(GPT_answer)
+        reply = TextSendMessage(GPT_answer)
     '''
     GPT_answer = GPT_response(msg)
     print(GPT_answer)

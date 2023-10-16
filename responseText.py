@@ -1,8 +1,3 @@
-from linebot import (
-    LineBotApi, WebhookHandler
-)
-
-from openAi import GPT_response 
 from chooseMenu import eatingHabits
 from app import lineBotApiReply
 

@@ -1,13 +1,13 @@
-from app import eatingHabits
+#from app import eatingHabits
 #from app import lineBotApiReply
 
 def messageApply(msg):
     if msg == '個人喜好':
         #葷/全素/蛋奶素
-        msg = eatingHabits()
+        #####msg = eatingHabits()
         #請輸入不吃的食物
         ##儲存
-        ######msg = '你好'
+        msg = '個人喜好'
     elif msg == '料理生成':
         #請選擇下方選單中的服務進行食譜生成
         #早餐

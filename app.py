@@ -84,6 +84,8 @@ def lineBotApiReply(evemt, message):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = messageApply(event.message.text)
+    if msg == '個人喜好':
+        msg = eatingHabits()
     '''
     GPT_answer = GPT_response(msg)
     print(GPT_answer)

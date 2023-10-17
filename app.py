@@ -170,6 +170,8 @@ def handle_message(event):
         #reply = TextSendMessage(text='請輸入您不吃的食物')
     elif '料理生成' in msg :
         reply = whichMeal()
+    elif '隨機生成' in msg :
+        reply = generateRecipe('幫我隨機生成一個食譜')
     else:
         reply = TextSendMessage(msg)
         '''

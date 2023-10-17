@@ -85,19 +85,25 @@ def lineBotApiReply(evemt, message):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = messageApply(event.message.text)
-    if  '個人喜好' in msg :
-        reply = eatingHabits()
-        #lineBotApiReply(event.reply_token , reply)
-        #reply = TextSendMessage(text='請輸入您不吃的食物')
-    else:
+    if msg != '':
+        if  '個人喜好' in msg :
+            reply = eatingHabits()
+            #lineBotApiReply(event.reply_token , reply)
+            #reply = TextSendMessage(text='請輸入您不吃的食物')
+        else:
+            reply = msg
+            '''
+            GPT_answer = GPT_response(msg)
+            print(GPT_answer)
+            reply = TextSendMessage(GPT_answer)
+            '''
+        '''
         GPT_answer = GPT_response(msg)
         print(GPT_answer)
-        reply = TextSendMessage(GPT_answer)
-    '''
-    GPT_answer = GPT_response(msg)
-    print(GPT_answer)
-    lineBotApiReply(event.reply_token, TextSendMessage(GPT_answer))
-    '''
+        lineBotApiReply(event.reply_token, TextSendMessage(GPT_answer))
+        '''
+    else :
+        reply = '儲存飲食習慣'
     lineBotApiReply(event.reply_token , reply)
 
 

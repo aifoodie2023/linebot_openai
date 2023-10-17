@@ -1,5 +1,6 @@
 #from app import eatingHabits
 #from app import lineBotApiReply
+from settingHobby import saveHabit
 from settingHobby import dietaryRestriction
 
 def messageApply(msg):
@@ -29,4 +30,6 @@ def messageApply(msg):
         msg = '節慶介紹'
     elif  '我不吃' in msg :
         dietaryRestriction(msg)
+    elif '我吃' in msg:
+        saveHabit(msg)
     return msg

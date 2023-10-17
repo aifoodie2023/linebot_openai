@@ -1,5 +1,6 @@
 #from app import eatingHabits
 #from app import lineBotApiReply
+from settingHobby import dietaryRestriction
 
 def messageApply(msg):
     if msg == '個人喜好':
@@ -26,4 +27,6 @@ def messageApply(msg):
     elif msg == '節慶食譜':
         ##生成節慶食譜
         msg = '節慶介紹'
+    elif  '我不吃' in msg :
+        dietaryRestriction(msg)
     return msg

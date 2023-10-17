@@ -10,6 +10,7 @@ from linebot.models import *
 
 #import from another script
 from responseText import messageApply
+from settingHobby import saveHabit
 #======python的函數庫==========
 import tempfile, os
 import datetime
@@ -85,7 +86,8 @@ def lineBotApiReply(evemt, message):
 def handle_message(event):
     msg = messageApply(event.message.text)
     if  '個人喜好' in msg :
-        reply = eatingHabits()
+        dietaryRestriction(msg)
+        saveHabit(reply)
     else:
         GPT_answer = GPT_response(msg)
         print(GPT_answer)
@@ -109,8 +111,13 @@ def welcome(event):
     gid = event.source.group_id
     profile = line_bot_api.get_group_member_profile(gid, uid)
     name = profile.display_name
-    message = TextSendMessage(text=f'{name}歡迎加入')
+    #message = TextSendMessage(text=f'{name}歡迎加入')
+    message = TextSendMessage(text='Hello, 歡迎加入AI吃鬼，這裡可以自由生成食譜，也可以根據現成的食材生成喔!')
     line_bot_api.reply_message(event.reply_token, message)
+    reply = eatingHabits()
+    saveHabit(reply)
+    lineBotApiReply(event.reply_token , reply)
+    message = TextSendMessage(text='請輸入您不吃的食物')
         
         
 import os

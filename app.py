@@ -90,7 +90,7 @@ def whichMeal():
                     actions =[
                         MessageAction(
                             label= "早餐",
-                            text= "早餐" ),
+                            text= "早餐" )
                         ]
                     ),
                 CarouselColumn(
@@ -98,7 +98,7 @@ def whichMeal():
                     actions =[
                         MessageAction(
                             label= "午餐",
-                            text= "午餐" ),
+                            text= "午餐" )
                         ]
                     ),
                 CarouselColumn(
@@ -106,7 +106,7 @@ def whichMeal():
                     actions =[
                         MessageAction(
                             label= "晚餐",
-                            text= "晚餐" ),
+                            text= "晚餐" )
                         ]
                     )
                 ]

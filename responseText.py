@@ -15,7 +15,7 @@ def messageApply(msg):
         #早餐
         #泰式
         ##生成食譜
-        msg = '早餐'
+        msg = '料理生成'
     elif msg == '輸入食材':
         #請輸入現有食材
         #儲存現有食材
@@ -30,6 +30,8 @@ def messageApply(msg):
         msg = '節慶介紹'
     elif  '我不吃' in msg :
         dietaryRestriction(msg)
+        msg='好的! 個人喜好設定已儲存'
     elif '我吃' in msg:
         saveHabit(msg)
+        msg='儲存飲食習慣'
     return msg

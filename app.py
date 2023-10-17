@@ -93,7 +93,7 @@ def whichMeal():
                             text= "早餐" ),
                         ]
                     ),
-                    CarouselColumn(
+                CarouselColumn(
                     thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
                     actions =[
                         MessageAction(
@@ -101,7 +101,7 @@ def whichMeal():
                             text= "午餐" ),
                         ]
                     ),
-                    CarouselColumn(
+                CarouselColumn(
                     thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
                     actions =[
                         MessageAction(

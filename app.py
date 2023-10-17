@@ -88,8 +88,8 @@ def handle_message(event):
     if  '個人喜好' in msg :
         reply = eatingHabits()
         saveHabit(reply)
-        lineBotApiReply(event.reply_token , reply)
-        reply = TextSendMessage(text='請輸入您不吃的食物')
+        #lineBotApiReply(event.reply_token , reply)
+        #reply = TextSendMessage(text='請輸入您不吃的食物')
     else:
         GPT_answer = GPT_response(msg)
         print(GPT_answer)

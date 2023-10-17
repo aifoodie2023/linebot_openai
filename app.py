@@ -86,8 +86,10 @@ def lineBotApiReply(evemt, message):
 def handle_message(event):
     msg = messageApply(event.message.text)
     if  '個人喜好' in msg :
-        dietaryRestriction(msg)
+        reply = eatingHabits()
         saveHabit(reply)
+        lineBotApiReply(event.reply_token , reply)
+        reply = TextSendMessage(text='請輸入您不吃的食物')
     else:
         GPT_answer = GPT_response(msg)
         print(GPT_answer)
@@ -114,10 +116,7 @@ def welcome(event):
     #message = TextSendMessage(text=f'{name}歡迎加入')
     message = TextSendMessage(text='Hello, 歡迎加入AI吃鬼，這裡可以自由生成食譜，也可以根據現成的食材生成喔!')
     line_bot_api.reply_message(event.reply_token, message)
-    reply = eatingHabits()
-    saveHabit(reply)
-    lineBotApiReply(event.reply_token , reply)
-    message = TextSendMessage(text='請輸入您不吃的食物')
+   
         
         
 import os

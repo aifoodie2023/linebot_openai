@@ -76,6 +76,7 @@ def eatingHabits():
                 ]
             )
         )
+    saveHabit(buttons_template_message)
     return buttons_template_message
 
 def lineBotApiReply(evemt, message):
@@ -87,7 +88,6 @@ def handle_message(event):
     msg = messageApply(event.message.text)
     if  '個人喜好' in msg :
         reply = eatingHabits()
-        saveHabit(reply)
         #lineBotApiReply(event.reply_token , reply)
         #reply = TextSendMessage(text='請輸入您不吃的食物')
     else:

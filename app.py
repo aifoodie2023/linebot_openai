@@ -76,7 +76,6 @@ def eatingHabits():
                 ]
             )
         )
-    saveHabit(buttons_template_message)
     return buttons_template_message
 
 def lineBotApiReply(evemt, message):

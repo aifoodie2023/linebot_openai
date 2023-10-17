@@ -52,6 +52,13 @@ def callback():
         abort(400)
     return 'OK'
 
+def generateRecipe(msg):
+    GPT_answer = GPT_response(msg)
+    print(GPT_answer)
+    recipe = TextSendMessage(GPT_answer)
+    globals.getRecipe = 0
+    return recipe
+
 def eatingHabits():
     buttons_template_message = TemplateSendMessage(
         alt_text = "葷素",

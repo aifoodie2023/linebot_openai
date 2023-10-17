@@ -11,3 +11,7 @@ def saveHabit(habit):
 def dietaryRestriction(message):
     restriction = message
     return
+
+def saveIngredients (message):
+    ingredients = message
+    return

@@ -11,6 +11,7 @@ from linebot.models import *
 #import from another script
 from responseText import messageApply
 from settingHobby import saveHabit
+import globals
 #======python的函數庫==========
 import tempfile, os
 import datetime
@@ -26,7 +27,6 @@ line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 # OPENAI API Key初始化設定
 openai.api_key = os.getenv('OPENAI_API_KEY')
-
 
 def GPT_response(text):
     # 接收回應
@@ -114,6 +114,42 @@ def whichMeal():
         )
     return buttons_template_message
 
+def cuisineType():
+    buttons_template_message = TemplateSendMessage(
+        alt_text = "料理種類",
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    #title = "請輸入您的個人喜好",
+                    #text ="請點你的飲食習慣",
+                    actions =[
+                        MessageAction(
+                            label= "中式",
+                            text= "中式" )
+                        ]
+                    ),
+                CarouselColumn(
+                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    actions =[
+                        MessageAction(
+                            label= "西式",
+                            text= "西式" )
+                        ]
+                    ),
+                CarouselColumn(
+                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    actions =[
+                        MessageAction(
+                            label= "日式",
+                            text= "日式" )
+                        ]
+                    )
+                ]
+            )
+        )
+    return buttons_template_message
+
 def lineBotApiReply(evemt, message):
     line_bot_api.reply_message(evemt, message)
 
@@ -163,3 +199,4 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+    globals.intitials()

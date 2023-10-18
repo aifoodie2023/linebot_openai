@@ -92,28 +92,50 @@ def whichMeal():
             columns=[
                 CarouselColumn(
                     thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
-                    #title = "請輸入您的個人喜好",
-                    #text ="請點你的飲食習慣",
+                    title = "請輸入您的個人喜好",
+                    text ="請點你的飲食習慣",
                     actions =[
                         MessageAction(
                             label= "早餐",
-                            text= "早餐" )
+                            text= "早餐" ),
+                        MessageAction(
+                            label= "全素",
+                            text= "我吃全素" ),
+                        MessageAction(
+                            label= "蛋奶素",
+                            text= "我吃蛋奶素" ),
                         ]
                     ),
                 CarouselColumn(
                     thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    title = "請輸入您的個人喜好",
+                    text ="請點你的飲食習慣",
                     actions =[
                         MessageAction(
                             label= "午餐",
-                            text= "午餐" )
+                            text= "午餐" ),
+                        MessageAction(
+                            label= "全素",
+                            text= "我吃全素" ),
+                        MessageAction(
+                            label= "蛋奶素",
+                            text= "我吃蛋奶素" ),
                         ]
                     ),
                 CarouselColumn(
                     thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    title = "請輸入您的個人喜好",
+                    text ="請點你的飲食習慣",
                     actions =[
                         MessageAction(
                             label= "晚餐",
-                            text= "晚餐" )
+                            text= "晚餐" ),
+                        MessageAction(
+                            label= "全素",
+                            text= "我吃全素" ),
+                        MessageAction(
+                            label= "蛋奶素",
+                            text= "我吃蛋奶素" ),
                         ]
                     )
                 ]
@@ -168,7 +190,7 @@ def handle_message(event):
         reply = eatingHabits()
         #lineBotApiReply(event.reply_token , reply)
         #reply = TextSendMessage(text='請輸入您不吃的食物')
-    elif '料理生成' in msg :
+    elif msg == '料理生成' :
         reply = whichMeal()
     elif '隨機生成' in msg :
         reply = generateRecipe('幫我隨機生成一個食譜')
@@ -195,6 +217,7 @@ def handle_message(event):
 @handler.add(MemberJoinedEvent)
 def welcome(event):
     uid = event.joined.members[0].user_id
+    print(uid)
     gid = event.source.group_id
     profile = line_bot_api.get_group_member_profile(gid, uid)
     name = profile.display_name

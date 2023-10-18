@@ -3,6 +3,7 @@
 #from app import lineBotApiReply
 from settingHobby import saveHabit, dietaryRestriction, saveIngredients
 import globals
+from templateItem import welcomeMessage, eatingHabits, whichMeal, cuisineType, chooseMeal, test, askAboutHobby
 #from generateRecipe import generateRecipe
 
 def messageApply(msg):
@@ -13,18 +14,20 @@ def messageApply(msg):
         #####msg = eatingHabits()
         #請輸入不吃的食物
         ##儲存
-        reply = '個人喜好'
+        #reply = '個人喜好'
+        reply = askAboutHobby()
 
     elif msg == '料理生成':
         #請選擇下方選單中的服務進行食譜生成
         #早餐
         #泰式
         ##生成食譜
-        reply = '料理生成'
+        #reply = '料理生成'
+        reply = chooseMeal()
 
     elif msg == '輸入食材':
         #請輸入現有食材      
-        reply = '請輸入現有食材(以我現在有開頭)'
+        reply = '請輸入現有食材，以我現在有開頭。'
 
         #購買連結
     elif '我現在有' in msg:

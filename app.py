@@ -90,7 +90,10 @@ def handle_message(event):
                 TextSendMessage(
                     text = "以下是依據您輸入的食材製作出來的食譜"
                 ),
-                generateRecipe(globals.ingredients)
+                TextSendMessage(
+                    text = '剛剛輸入' + globals.ingredients
+                ),
+                generateRecipe(globals.ingredients+'，請幫我生成相關的食譜')
          ]
     else:
         reply = TextSendMessage(msg)

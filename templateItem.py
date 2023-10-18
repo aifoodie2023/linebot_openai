@@ -208,3 +208,27 @@ def chooseMeal():
         cuisineType()
     ]
     return message
+
+def test():
+    buttons_template_message = TemplateSendMessage(
+        alt_text = "哪一餐",
+        template=ImageCarouselTemplate(
+        columns=[
+            ImageCarouselColumn(
+                image_url='https://i.postimg.cc/7Z4ybFLT/chinese.png',
+                action=MessageAction(
+                    label='中式',
+                    text='中式'
+                )
+            ),
+            ImageCarouselColumn(
+                image_url='https://i.postimg.cc/9X9STLKP/american.png',
+                action=MessageAction(
+                    label='西式',
+                    text='西式'
+                )
+            )
+        ]
+    )
+        )
+    return buttons_template_message

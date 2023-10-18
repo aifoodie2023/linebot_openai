@@ -1,3 +1,5 @@
+import globals
+
 def eatingHabit():
     message = [
         TextSendMessage(
@@ -46,5 +48,5 @@ def dietaryRestriction(message):
     return
 
 def saveIngredients (message):
-    ingredients = message
-    return  ingredients
+    globals.ingredients = message
+    return  globals.ingredients

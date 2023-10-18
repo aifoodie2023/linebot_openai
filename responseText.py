@@ -36,7 +36,7 @@ def messageApply(msg):
 
     elif msg == '隨機生成':
         ##生成食譜
-        msg = '幫我隨機生成一個食譜'
+        msg = '隨機生成'
         globals.getRecipe = 1
         #reply = generateRecipe(msg)
         

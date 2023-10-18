@@ -57,7 +57,7 @@ def generateRecipe(msg):
     GPT_answer = GPT_response(msg)
     print(GPT_answer)
     recipe = TextSendMessage(GPT_answer)
-    globals.getRecipe = 0
+    #globals.getRecipe = 0
     return recipe
 
 
@@ -73,15 +73,13 @@ def lineBotApiReply(evemt, message):
 def handle_message(event):
     msg = messageApply(event.message.text)
     if  '個人喜好' in msg :
-        reply = cuisineType()
+        reply = askAboutHobby()
         #lineBotApiReply(event.reply_token , reply)
         #reply = TextSendMessage(text='請輸入您不吃的食物')
     elif msg == '料理生成' :
         reply = chooseMeal()
     elif msg == '隨機生成' :
-        GPT_answer = GPT_response('幫我隨機生成一個食譜')
-        print(GPT_answer)
-        reply = TextSendMessage(GPT_answer)
+        reply = generateRecipe('幫我隨機生成一個食譜')
     else:
         reply = TextSendMessage(msg)
         '''

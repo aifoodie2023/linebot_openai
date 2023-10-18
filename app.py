@@ -9,7 +9,8 @@ from linebot.exceptions import (
 from linebot.models import *
 
 #import from another script
-from responseText import messageApply, welcomeMessage
+from responseText import messageApply
+from templateItem import welcomeMessage, eatingHabits, whichMeal
 from settingHobby import saveHabit
 import globals
 #======python的函數庫==========
@@ -59,89 +60,9 @@ def generateRecipe(msg):
     globals.getRecipe = 0
     return recipe
 
-def eatingHabits():
-    buttons_template_message = TemplateSendMessage(
-        alt_text = "葷素",
-        template=CarouselTemplate(
-            columns=[
-                CarouselColumn(
-                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
-                    title = "請輸入您的個人喜好",
-                    text ="請點你的飲食習慣",
-                    actions =[
-                        MessageAction(
-                            label= "葷",
-                            text= "我吃葷" ),
-                        MessageAction(
-                            label= "全素",
-                            text= "我吃全素" ),
-                        MessageAction(
-                            label= "蛋奶素",
-                            text= "我吃蛋奶素" ),
-                        ]
-                    )
-                ]
-            )
-        )
-    return buttons_template_message
 
-def whichMeal():
-    buttons_template_message = TemplateSendMessage(
-        alt_text = "哪一餐",
-        template=CarouselTemplate(
-            columns=[
-                CarouselColumn(
-                    thumbnail_image_url ='https://i.postimg.cc/W4hn9MSc/breakfast.jpg',
-                    title = "請輸入您的個人喜好",
-                    text ="請點你的飲食習慣",
-                    actions =[
-                        MessageAction(
-                            label= "早餐",
-                            text= "早餐" ),
-                        MessageAction(
-                            label= "全素",
-                            text= "我吃全素" ),
-                        MessageAction(
-                            label= "蛋奶素",
-                            text= "我吃蛋奶素" ),
-                        ]
-                    ),
-                CarouselColumn(
-                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
-                    title = "請輸入您的個人喜好",
-                    text ="請點你的飲食習慣",
-                    actions =[
-                        MessageAction(
-                            label= "午餐",
-                            text= "午餐" ),
-                        MessageAction(
-                            label= "全素",
-                            text= "我吃全素" ),
-                        MessageAction(
-                            label= "蛋奶素",
-                            text= "我吃蛋奶素" ),
-                        ]
-                    ),
-                CarouselColumn(
-                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
-                    title = "請輸入您的個人喜好",
-                    text ="請點你的飲食習慣",
-                    actions =[
-                        MessageAction(
-                            label= "晚餐",
-                            text= "晚餐" ),
-                        MessageAction(
-                            label= "全素",
-                            text= "我吃全素" ),
-                        MessageAction(
-                            label= "蛋奶素",
-                            text= "我吃蛋奶素" ),
-                        ]
-                    )
-                ]
-            )
-        )
-    return buttons_template_message
+
+
 
 def cuisineType():
     buttons_template_message = TemplateSendMessage(

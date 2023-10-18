@@ -91,23 +91,23 @@ def whichMeal():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
-                    title = "請輸入您的個人喜好",
-                    text ="請點你的飲食習慣",
+                    thumbnail_image_url ='https://i.postimg.cc/d1YQFhTg/breakfast.png',
+                    title = "",
+                    text ="",
                     actions =[
                         MessageAction(
                             label= "早餐",
                             text= "早餐" ),
                         MessageAction(
-                            label= "全素",
-                            text= "我吃全素" ),
+                            label= "早餐",
+                            text= "早餐" ),
                         MessageAction(
-                            label= "蛋奶素",
-                            text= "我吃蛋奶素" ),
+                            label= "早餐",
+                            text= "早餐" ),
                         ]
                     ),
                 CarouselColumn(
-                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    thumbnail_image_url ='https://i.postimg.cc/59HJr5Gj/lunch.png',
                     title = "請輸入您的個人喜好",
                     text ="請點你的飲食習慣",
                     actions =[
@@ -115,11 +115,11 @@ def whichMeal():
                             label= "午餐",
                             text= "午餐" ),
                         MessageAction(
-                            label= "全素",
-                            text= "我吃全素" ),
+                            label= "午餐",
+                            text= "午餐" ),
                         MessageAction(
-                            label= "蛋奶素",
-                            text= "我吃蛋奶素" ),
+                            label= "午餐",
+                            text= "午餐" ),
                         ]
                     ),
                 CarouselColumn(
@@ -216,10 +216,9 @@ def handle_message(event):
 
 @handler.add(MemberJoinedEvent)
 def welcome(event):
-    uid = event.joined.members[0].user_id
-    print(uid)
+    globals.uid = event.joined.members[0].user_id
     gid = event.source.group_id
-    profile = line_bot_api.get_group_member_profile(gid, uid)
+    profile = line_bot_api.get_group_member_profile(gid, globals.uid)
     name = profile.display_name
     #message = TextSendMessage(text=f'{name}歡迎加入')
     message = TextSendMessage(text='Hello, 歡迎加入AI吃鬼，這裡可以自由生成食譜，也可以根據現成的食材生成喔!')
@@ -229,6 +228,8 @@ def welcome(event):
         
 import os
 if __name__ == "__main__":
+    globals.intitials()
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-    globals.intitials()
+    print(globals.uid)
+    

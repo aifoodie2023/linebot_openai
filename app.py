@@ -74,7 +74,6 @@ def handle_message(event):
     msg = messageApply(event.message.text)
     if  '個人喜好' in msg :
         reply = askAboutHobby()
-
     elif msg == '料理生成' :
         reply = chooseMeal()
     elif msg == '隨機生成' :
@@ -95,7 +94,7 @@ def handle_message(event):
                 generateRecipe(globals.ingredients+'，請幫我生成相關的食譜')
          ]
     else:
-        reply = msg
+        reply = TextSendMessage(msg)
         '''
         GPT_answer = GPT_response(msg)
         print(GPT_answer)

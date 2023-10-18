@@ -28,7 +28,10 @@ def welcomeMessage():
                                 )
                             ]
                         )
-                    )
+                    ),
+                TextSendMessage(
+                    text = "請輸入您不吃的食物"
+                )
             ]
     return message
 
@@ -71,7 +74,9 @@ def whichMeal():
                         MessageAction(
                             label= "早餐",
                             text= "早餐" ),
-                        
+                        MessageAction(
+                            label= "早餐",
+                            text= "早餐" ),
                         MessageAction(
                             label= "早餐",
                             text= "早餐" ),
@@ -113,3 +118,46 @@ def whichMeal():
             )
         )
     return buttons_template_message
+
+def cuisineType():
+    buttons_template_message = TemplateSendMessage(
+        alt_text = "料理種類",
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    #title = "請輸入您的個人喜好",
+                    #text ="請點你的飲食習慣",
+                    actions =[
+                        MessageAction(
+                            label= "中式",
+                            text= "中式" )
+                        ]
+                    ),
+                CarouselColumn(
+                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    actions =[
+                        MessageAction(
+                            label= "西式",
+                            text= "西式" )
+                        ]
+                    ),
+                CarouselColumn(
+                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    actions =[
+                        MessageAction(
+                            label= "日式",
+                            text= "日式" )
+                        ]
+                    )
+                ]
+            )
+        )
+    return buttons_template_message
+
+def chooseMeal():
+    message = [
+        whichMeal(),
+        cuisineType()
+    ]
+    return message

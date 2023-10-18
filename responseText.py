@@ -1,4 +1,4 @@
-
+from linebot.models import *
 #from app import eatingHabits
 #from app import lineBotApiReply
 from settingHobby import saveHabit, dietaryRestriction, saveIngredients

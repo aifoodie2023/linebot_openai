@@ -113,13 +113,7 @@ def whichMeal():
                     actions =[
                         MessageAction(
                             label= "午餐",
-                            text= "午餐" ),
-                        MessageAction(
-                            label= "全素",
-                            text= "我吃全素" ),
-                        MessageAction(
-                            label= "蛋奶素",
-                            text= "我吃蛋奶素" ),
+                            text= "午餐" )
                         ]
                     ),
                 CarouselColumn(

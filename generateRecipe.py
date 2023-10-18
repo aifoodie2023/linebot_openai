@@ -50,3 +50,18 @@ def whichMeal():
         )
     return buttons_template_message
     '''
+'''
+message = [
+                StickerSendMessage(
+                    package_id = 446,
+                    sticker_id = 2021
+                ),
+                TextSendMessage(
+                    text = "這是pizza圖片"
+                ),
+                ImageSendMessage(
+                    original_content_url = 'https://i.imgur.com/4QfKuz1.png',
+                    preview_image_url = 'https://i.imgur.com/4QfKuz1.png'
+                )
+            ]
+'''

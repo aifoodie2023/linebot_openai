@@ -91,23 +91,23 @@ def whichMeal():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url ='https://i.postimg.cc/d1YQFhTg/breakfast.png',
-                    title = "",
-                    text ="",
+                    thumbnail_image_url ='https://i.postimg.cc/W4hn9MSc/breakfast.jpg',
+                    title = "123",
+                    text ="123",
                     actions =[
                         MessageAction(
                             label= "早餐",
                             text= "早餐" ),
                         MessageAction(
-                            label= "早餐",
-                            text= "早餐" ),
+                            label= "早餐1",
+                            text= "早餐1" ),
                         MessageAction(
-                            label= "早餐",
-                            text= "早餐" ),
+                            label= "早餐2",
+                            text= "早餐2" ),
                         ]
                     ),
                 CarouselColumn(
-                    thumbnail_image_url ='https://i.postimg.cc/59HJr5Gj/lunch.png',
+                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
                     title = "請輸入您的個人喜好",
                     text ="請點你的飲食習慣",
                     actions =[
@@ -115,11 +115,11 @@ def whichMeal():
                             label= "午餐",
                             text= "午餐" ),
                         MessageAction(
-                            label= "午餐",
-                            text= "午餐" ),
+                            label= "午餐1",
+                            text= "午餐1" ),
                         MessageAction(
-                            label= "午餐",
-                            text= "午餐" ),
+                            label= "午餐2",
+                            text= "午餐2" ),
                         ]
                     ),
                 CarouselColumn(

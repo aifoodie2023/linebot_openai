@@ -7,6 +7,7 @@ import globals
 def messageApply(msg):
 
     if msg == '個人喜好':
+        
         #葷/全素/蛋奶素
         #####msg = eatingHabits()
         #請輸入不吃的食物

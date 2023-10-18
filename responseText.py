@@ -45,7 +45,7 @@ def messageApply(msg):
         
     elif msg == '節慶食譜':
         ##生成節慶食譜
-        reply = '節慶404'
+        reply = TextSendMessage('節慶404')
 
     elif  '我不吃' in msg :
         dietaryRestriction(msg)

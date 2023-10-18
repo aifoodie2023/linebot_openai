@@ -80,7 +80,7 @@ def whichMeal():
                         ]
                     ),
                 CarouselColumn(
-                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    thumbnail_image_url ='https://i.postimg.cc/59HJr5Gj/lunch.png',
                     title = "請輸入您的個人喜好",
                     text ="請點你的飲食習慣",
                     actions =[

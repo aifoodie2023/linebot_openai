@@ -24,7 +24,7 @@ def messageApply(msg):
 
     elif msg == '輸入食材':
         #請輸入現有食材      
-        reply = '請輸入現有食材'
+        reply = '請輸入現有食材(以我現在有開頭)'
 
         #購買連結
     elif '我現在有' in msg:

@@ -10,7 +10,7 @@ from linebot.models import *
 
 #import from another script
 from responseText import messageApply
-from templateItem import welcomeMessage, eatingHabits, whichMeal, cuisineType, chooseMeal, test
+from templateItem import welcomeMessage, eatingHabits, whichMeal, cuisineType, chooseMeal, test, askAboutHobby
 from settingHobby import saveHabit
 import globals
 #======python的函數庫==========
@@ -73,16 +73,19 @@ def lineBotApiReply(evemt, message):
 def handle_message(event):
     msg = messageApply(event.message.text)
     if  '個人喜好' in msg :
-        reply = test()
+        reply = askAboutHobby()
         #lineBotApiReply(event.reply_token , reply)
         #reply = TextSendMessage(text='請輸入您不吃的食物')
     elif msg == '料理生成' :
         reply = chooseMeal()
     elif msg == '隨機生成' :
-        reply = generateRecipe('幫我隨機生成一個食譜')
+        reply = [
+            TextSendMessage(
+                    text = "隨機生成食譜如下"
+            ),
+            generateRecipe('幫我隨機生成一個食譜(用繁體中文)')
+        ]
     elif msg == '以下是依據您輸入的食材製作出來的食譜' :
-        #reply = "以下是依據您輸入的食材製作出來的食譜"
-        
          reply = [
                 TextSendMessage(
                     text = "以下是依據您輸入的食材製作出來的食譜"

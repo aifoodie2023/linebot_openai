@@ -71,9 +71,7 @@ def whichMeal():
                         MessageAction(
                             label= "早餐",
                             text= "早餐" ),
-                        MessageAction(
-                            label= "早餐",
-                            text= "早餐" ),
+                        
                         MessageAction(
                             label= "早餐",
                             text= "早餐" ),

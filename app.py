@@ -91,7 +91,7 @@ def whichMeal():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    thumbnail_image_url ='https://i.postimg.cc/W4hn9MSc/breakfast.jpg',
                     title = "請輸入您的個人喜好",
                     text ="請點你的飲食習慣",
                     actions =[

@@ -84,3 +84,6 @@ def welcomeMessage():
                     )
             ]
     return message
+
+def havingIngredient():
+    return

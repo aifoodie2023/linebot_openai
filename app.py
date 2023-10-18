@@ -79,7 +79,9 @@ def handle_message(event):
     elif msg == '料理生成' :
         reply = chooseMeal()
     elif msg == '隨機生成' :
-        reply = generateRecipe('幫我隨機生成一個食譜')
+        GPT_answer = GPT_response('幫我隨機生成一個食譜')
+        print(GPT_answer)
+        reply = TextSendMessage(GPT_answer)
     else:
         reply = TextSendMessage(msg)
         '''

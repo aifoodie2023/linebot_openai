@@ -65,31 +65,31 @@ def whichMeal():
             columns=[
                 CarouselColumn(
                     thumbnail_image_url ='https://i.postimg.cc/W4hn9MSc/breakfast.jpg',
-                    title = "請輸入您的個人喜好",
-                    text ="請點你的飲食習慣",
+                    title = "123",
+                    text ="123",
                     actions =[
                         MessageAction(
                             label= "早餐",
                             text= "早餐" ),
                         MessageAction(
-                            label= "全素",
-                            text= "我吃全素" ),
+                            label= "早餐",
+                            text= "早餐" ),
                         MessageAction(
-                            label= "蛋奶素",
-                            text= "我吃蛋奶素" ),
+                            label= "早餐",
+                            text= "早餐" ),
                         ]
                     ),
                 CarouselColumn(
                     thumbnail_image_url ='https://i.postimg.cc/59HJr5Gj/lunch.png',
-                    title = "請輸入您的個人喜好",
-                    text ="請點你的飲食習慣",
+                    title = "123",
+                    text ="123",
                     actions =[
                         MessageAction(
                             label= "午餐",
                             text= "午餐" ),
                         MessageAction(
-                            label= "全素",
-                            text= "我吃全素" ),
+                            label= "午餐",
+                            text= "午餐" ),
                         MessageAction(
                             label= "蛋奶素",
                             text= "我吃蛋奶素" ),

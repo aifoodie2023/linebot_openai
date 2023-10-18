@@ -1,3 +1,4 @@
+from linebot.models import *
 #from app import eatingHabits
 #from app import lineBotApiReply
 from settingHobby import saveHabit, dietaryRestriction, saveIngredients
@@ -7,7 +8,7 @@ import globals
 def messageApply(msg):
 
     if msg == '個人喜好':
-        
+
         #葷/全素/蛋奶素
         #####msg = eatingHabits()
         #請輸入不吃的食物

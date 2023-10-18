@@ -9,7 +9,7 @@ from linebot.exceptions import (
 from linebot.models import *
 
 #import from another script
-from responseText import messageApply
+from responseText import messageApply, welcomeMessage
 from settingHobby import saveHabit
 import globals
 #======python的函數庫==========
@@ -124,8 +124,8 @@ def whichMeal():
                     ),
                 CarouselColumn(
                     thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
-                    title = "",
-                    text ="",
+                    title = "請輸入您的個人喜好",
+                    text ="請點你的飲食習慣",
                     actions =[
                         MessageAction(
                             label= "晚餐",
@@ -187,12 +187,12 @@ def lineBotApiReply(evemt, message):
 def handle_message(event):
     msg = messageApply(event.message.text)
     if  '個人喜好' in msg :
-        reply = eatingHabits()
+        reply = welcomeMessage()
         #lineBotApiReply(event.reply_token , reply)
         #reply = TextSendMessage(text='請輸入您不吃的食物')
     elif msg == '料理生成' :
         reply = whichMeal()
-    elif '隨機生成' in msg :
+    elif msg == '隨機生成' :
         reply = generateRecipe('幫我隨機生成一個食譜')
     else:
         reply = TextSendMessage(msg)
@@ -216,9 +216,10 @@ def handle_message(event):
 
 @handler.add(MemberJoinedEvent)
 def welcome(event):
-    globals.uid = event.joined.members[0].user_id
+    uid = event.joined.members[0].user_id
+    print(uid)
     gid = event.source.group_id
-    profile = line_bot_api.get_group_member_profile(gid, globals.uid)
+    profile = line_bot_api.get_group_member_profile(gid, uid)
     name = profile.display_name
     #message = TextSendMessage(text=f'{name}歡迎加入')
     message = TextSendMessage(text='Hello, 歡迎加入AI吃鬼，這裡可以自由生成食譜，也可以根據現成的食材生成喔!')
@@ -228,8 +229,6 @@ def welcome(event):
         
 import os
 if __name__ == "__main__":
-    globals.intitials()
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-    print(globals.uid)
-    
+    globals.intitials()

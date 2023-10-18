@@ -47,4 +47,4 @@ def dietaryRestriction(message):
 
 def saveIngredients (message):
     ingredients = message
-    return
+    return  ingredients

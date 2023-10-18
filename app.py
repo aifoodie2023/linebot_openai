@@ -73,13 +73,20 @@ def lineBotApiReply(evemt, message):
 def handle_message(event):
     msg = messageApply(event.message.text)
     if  '個人喜好' in msg :
-        reply = askAboutHobby()
+        reply = eatingHabits()
         #lineBotApiReply(event.reply_token , reply)
         #reply = TextSendMessage(text='請輸入您不吃的食物')
     elif msg == '料理生成' :
         reply = chooseMeal()
     elif msg == '隨機生成' :
         reply = generateRecipe('幫我隨機生成一個食譜')
+    elif msg == '以下是依據您輸入的食材製作出來的食譜' :
+         reply = [
+                TextSendMessage(
+                    text = "以下是依據您輸入的食材製作出來的食譜"
+                ),
+                generateRecipe(globals.ingredients)
+         ]
     else:
         reply = TextSendMessage(msg)
         '''

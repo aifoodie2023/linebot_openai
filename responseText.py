@@ -36,13 +36,13 @@ def messageApply(msg):
 
     elif msg == '隨機生成':
         ##生成食譜
-        msg = '隨機生成'
+        #msg = '幫我隨機生成一個食譜'
         globals.getRecipe = 1
-        #reply = generateRecipe(msg)
+        reply = '隨機生成'
         
     elif msg == '節慶食譜':
         ##生成節慶食譜
-        reply = '節慶介紹'
+        reply = '節慶404'
 
     elif  '我不吃' in msg :
         dietaryRestriction(msg)

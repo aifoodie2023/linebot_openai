@@ -91,7 +91,7 @@ def whichMeal():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url ='https://i.postimg.cc/W4hn9MSc/breakfast.jpg',
+                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
                     title = "123",
                     text ="123",
                     actions =[

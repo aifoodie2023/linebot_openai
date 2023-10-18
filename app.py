@@ -74,8 +74,7 @@ def handle_message(event):
     msg = messageApply(event.message.text)
     if  '個人喜好' in msg :
         reply = askAboutHobby()
-        #lineBotApiReply(event.reply_token , reply)
-        #reply = TextSendMessage(text='請輸入您不吃的食物')
+
     elif msg == '料理生成' :
         reply = chooseMeal()
     elif msg == '隨機生成' :

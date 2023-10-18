@@ -1,4 +1,4 @@
-from linebot.models import *
+
 #from app import eatingHabits
 #from app import lineBotApiReply
 from settingHobby import saveHabit, dietaryRestriction, saveIngredients
@@ -14,16 +14,15 @@ def messageApply(msg):
         #####msg = eatingHabits()
         #請輸入不吃的食物
         ##儲存
-        #reply = '個人喜好'
-        reply = askAboutHobby()
+        reply = '個人喜好'
+        
 
     elif msg == '料理生成':
         #請選擇下方選單中的服務進行食譜生成
         #早餐
         #泰式
         ##生成食譜
-        #reply = '料理生成'
-        reply = chooseMeal()
+        reply = '料理生成'
 
     elif msg == '輸入食材':
         #請輸入現有食材      
@@ -35,7 +34,7 @@ def messageApply(msg):
         saveIngredients(msg)
         reply='以下是依據您輸入的食材製作出來的食譜'
         globals.getRecipe = 1
-##生成食譜(以下是依據您輸入的食材製作出來的食譜)
+        ##生成食譜(以下是依據您輸入的食材製作出來的食譜)
 
     elif msg == '隨機生成':
         ##生成食譜
@@ -45,7 +44,7 @@ def messageApply(msg):
         
     elif msg == '節慶食譜':
         ##生成節慶食譜
-        reply = TextSendMessage('節慶404')
+        reply = '節慶404'
 
     elif  '我不吃' in msg :
         dietaryRestriction(msg)

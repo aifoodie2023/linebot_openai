@@ -44,7 +44,7 @@ def messageApply(msg):
  #-------------------------------------------------------#       
     elif msg == '節慶食譜':
         ##生成節慶食譜
-        reply = '節慶404'
+        reply = '節慶食譜'
 #-------------------------------------------------------#
     elif  '不吃' in msg :
         dietaryRestriction(msg)
@@ -77,16 +77,22 @@ def messageApply(msg):
 #-------------------------------------------------------#
     elif msg == '中式':
         globals.cuisineType = '中式'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '西式':
         globals.cuisineType = '西式'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '日式':
         globals.cuisineType = '日式'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '泰式':
         globals.cuisineType = '泰式'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '法式':
         globals.cuisineType = '法式'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '隨便':
         globals.cuisineType = '隨便'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
 
     return reply
 

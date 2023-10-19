@@ -11,7 +11,7 @@ from linebot.models import *
 #import from another script
 from responseText import messageApply
 from templateItem import welcomeMessage, eatingHabits, whichMeal, cuisineType, chooseMeal, test, askAboutHobby
-from settingHobby import saveHabit
+from settingHobby import saveHabit, exportHabit
 import globals
 #======python的函數庫==========
 import tempfile, os
@@ -90,6 +90,9 @@ def handle_message(event):
                 ),
                 TextSendMessage(
                     text = '#剛剛輸入:' + globals.ingredients
+                ),
+                TextSendMessage(
+                    text = exportHabit()
                 ),
                 generateRecipe(globals.ingredients+'，請幫我生成相關的食譜')
          ]

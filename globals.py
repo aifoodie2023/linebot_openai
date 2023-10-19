@@ -6,3 +6,7 @@ def intitials():
     getRecipe = 0
     global ingredients
     ingredients = ''
+    global eatingHabit
+    eatingHabit = ''
+    global restriction
+    restriction = ''

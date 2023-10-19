@@ -46,11 +46,17 @@ def messageApply(msg):
         ##生成節慶食譜
         reply = '節慶404'
 
-    elif  '我不吃' in msg :
+    elif  '不吃' in msg :
         dietaryRestriction(msg)
         reply='好的! 個人喜好設定已儲存'
 
-    elif '我吃' in msg:
+    elif msg == '我吃葷' :
+        saveHabit(msg)
+        reply='儲存飲食習慣'
+    elif msg == '我吃素' :
+        saveHabit(msg)
+        reply='儲存飲食習慣'
+    elif msg == '我吃蛋奶素' :
         saveHabit(msg)
         reply='儲存飲食習慣'
 

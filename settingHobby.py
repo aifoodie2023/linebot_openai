@@ -31,22 +31,31 @@ def eatingHabit():
     ]
     return message
 
-
-
 def saveHabit(habit):
     if habit == '我吃葷':
-        eatingHabit='我吃葷'
+        globals.eatingHabit='吃葷'
     elif habit == '我吃素':
-        eatingHabit='我是素食者'
+        globals.eatingHabit='是素食者'
     elif habit == '我吃蛋奶素':
-        eatingHabit='我吃蛋奶素'
-    return eatingHabit    
+        globals.eatingHabit='吃蛋奶素'
+    return habit    
 
 
 def dietaryRestriction(message):
-    restriction = message
-    return
+    globals.restriction = message
+    return message
 
 def saveIngredients (message):
     globals.ingredients = message
     return  globals.ingredients
+
+def exportHabit():
+    text = '#飲食習慣:'
+    if(globals.eatingHabit!=''):
+        text = text + '你' + globals.eatingHabit
+    if(globals.eatingHabit!='' and globals.restriction!=''):
+        text = text + ','
+    if(globals.restriction!=''):
+        text = text + '你' + globals.restriction
+    return text
+    

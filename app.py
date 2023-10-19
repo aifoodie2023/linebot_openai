@@ -92,7 +92,7 @@ def handle_message(event):
                     text = '#剛剛輸入:' + globals.ingredients
                 ),
                 TextSendMessage(
-                    text = exportHabit()
+                    text = habitCombine()
                 ),
                 generateRecipe(globals.habitCombine +'，'+ globals.ingredients+'，請幫我生成相關的食譜')
          ]

@@ -176,7 +176,8 @@ def askAboutHobby():
 
 def chooseMeal():
     message = [
-        whichMeal()
+        whichMeal(),
+        cuisineType()
     ]
     return message
 

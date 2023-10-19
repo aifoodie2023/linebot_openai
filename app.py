@@ -78,8 +78,8 @@ def handle_message(event):
 #-------------------------料理生成----------------------------------------------#
     elif msg == '料理生成' :
         reply = chooseMeal()
-    if globals.mealTypeClick == 1:
-        reply = cuisineType()
+    #elif globals.mealTypeClick == 1:
+    #    reply = cuisineType()
     elif '為你生成' in msg :
         reply = [
                 TextSendMessage(

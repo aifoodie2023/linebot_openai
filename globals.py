@@ -16,3 +16,6 @@ def intitials():
     mealType = ''
     global cuisineType
     cuisineType = ''
+
+    global mealTypeClick
+    mealTypeClick = 0

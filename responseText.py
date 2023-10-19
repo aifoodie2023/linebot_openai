@@ -26,7 +26,7 @@ def messageApply(msg):
 #-------------------------------------------------------#
     elif msg == '輸入食材':
         #請輸入現有食材      
-        reply = '請輸入現有食材，以我現在有開頭。'
+        reply = '請輸入現有食材，(我現在有...)'
 
         #購買連結
     elif '我現在有' in msg:
@@ -64,16 +64,22 @@ def messageApply(msg):
 #-------------------------------------------------------#
     elif msg == '早餐':
         globals.mealType = '早餐'
+        globals.mealTypeClick = 1
     elif msg == '午餐':
         globals.mealType = '午餐'
+        globals.mealTypeClick = 1
     elif msg == '晚餐':
         globals.mealType = '晚餐'
+        globals.mealTypeClick = 1
     elif msg == '消夜':
         globals.mealType = '消夜'
+        globals.mealTypeClick = 1
     elif msg == '點心':
         globals.mealType = '點心'
+        globals.mealTypeClick = 1
     elif msg == '飲料':
         globals.mealType = '飲料'
+        globals.mealTypeClick = 1
 #-------------------------------------------------------#
     elif msg == '中式':
         globals.cuisineType = '中式'

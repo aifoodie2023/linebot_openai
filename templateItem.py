@@ -169,15 +169,14 @@ def askAboutHobby():
     message = [
         eatingHabits(),
         TextSendMessage(
-            text = "請輸入您不吃的食物，以不吃開頭"
+            text = "請輸入您不吃的食物，(不吃...)"
         )
     ]
     return message
 
 def chooseMeal():
     message = [
-        whichMeal(),
-        cuisineType()
+        whichMeal()
     ]
     return message
 

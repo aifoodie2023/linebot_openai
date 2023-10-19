@@ -54,10 +54,10 @@ def messageApply(msg):
         saveHabit(msg)
         reply='儲存飲食習慣'
 
-    elif msg == '我吃素' :
+    elif msg == '我吃全素' :
         saveHabit(msg)
         reply='儲存飲食習慣'
-        
+
     elif msg == '我吃蛋奶素' :
         saveHabit(msg)
         reply='儲存飲食習慣'

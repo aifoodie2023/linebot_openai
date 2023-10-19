@@ -101,7 +101,7 @@ def handle_message(event):
                 generateRecipe('請幫我生成聖誕節的食譜')
         ]
     elif globals.mealTypeClick == 1:
-        cuisineType()
+        reply = cuisineType()
         globals.mealTypeClick = 0
     elif '為你生成' in msg :
         reply = [

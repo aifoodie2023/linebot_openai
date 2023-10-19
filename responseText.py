@@ -23,7 +23,7 @@ def messageApply(msg):
         #泰式
         ##生成食譜
         reply = '料理生成'
-
+#-------------------------------------------------------#
     elif msg == '輸入食材':
         #請輸入現有食材      
         reply = '請輸入現有食材，以我現在有開頭。'
@@ -35,17 +35,17 @@ def messageApply(msg):
         reply='以下是依據您輸入的食材製作出來的食譜'
         globals.getRecipe = 1
         ##生成食譜(以下是依據您輸入的食材製作出來的食譜)
-
+#-------------------------------------------------------#
     elif msg == '隨機生成':
         ##生成食譜
         #msg = '幫我隨機生成一個食譜'
         globals.getRecipe = 1
         reply = '隨機生成'
-        
+ #-------------------------------------------------------#       
     elif msg == '節慶食譜':
         ##生成節慶食譜
         reply = '節慶404'
-
+#-------------------------------------------------------#
     elif  '不吃' in msg :
         dietaryRestriction(msg)
         reply='好的! 個人喜好設定已儲存'
@@ -61,6 +61,32 @@ def messageApply(msg):
     elif msg == '我吃蛋奶素' :
         saveHabit(msg)
         reply='儲存飲食習慣'
+#-------------------------------------------------------#
+    elif msg == '早餐':
+        globals.mealType = '早餐'
+    elif msg == '午餐':
+        globals.mealType = '午餐'
+    elif msg == '晚餐':
+        globals.mealType = '晚餐'
+    elif msg == '消夜':
+        globals.mealType = '消夜'
+    elif msg == '點心':
+        globals.mealType = '點心'
+    elif msg == '飲料':
+        globals.mealType = '飲料'
+#-------------------------------------------------------#
+    elif msg == '中式':
+        globals.cuisineType = '中式'
+    elif msg == '西式':
+        globals.cuisineType = '西式'
+    elif msg == '日式':
+        globals.cuisineType = '日式'
+    elif msg == '泰式':
+        globals.cuisineType = '泰式'
+    elif msg == '法式':
+        globals.cuisineType = '法式'
+    elif msg == '隨便':
+        globals.cuisineType = '隨便'
 
     return reply
 

@@ -72,10 +72,22 @@ def lineBotApiReply(evemt, message):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = messageApply(event.message.text)
+#-------------------------個人喜好----------------------------------------------#
     if  msg == '個人喜好' :
         reply = askAboutHobby()
+#-------------------------料理生成----------------------------------------------#
     elif msg == '料理生成' :
         reply = chooseMeal()
+    if globals.mealTypeClick == 1:
+        reply = cuisineType()
+    elif '為你生成' in msg :
+        reply = [
+                TextSendMessage(
+                    text = '以下是'+globals.cuisineType+globals.mealType+'的食譜'
+                ),
+                generateRecipe('幫我生成一個'+ globals.cuisineType +globals.mealType +'食譜(用繁體中文)')
+        ]
+#-------------------------隨機生成----------------------------------------------#
     elif msg == '隨機生成' :
         reply = [
             TextSendMessage(
@@ -83,6 +95,7 @@ def handle_message(event):
             ),
             generateRecipe('幫我隨機生成一個食譜(用繁體中文)')
         ]
+#-------------------------輸入食材---------------------------------------------#
     elif msg == '以下是依據您輸入的食材製作出來的食譜' :
          reply = [
                 TextSendMessage(
@@ -93,6 +106,7 @@ def handle_message(event):
                 ),
                 generateRecipe(globals.ingredients+'，請幫我生成相關的食譜')
          ]
+#-------------------------節慶食譜----------------------------------------------#
     elif msg == '節慶食譜':
         reply = [
                TextSendMessage(
@@ -100,15 +114,7 @@ def handle_message(event):
                 ),
                 generateRecipe('請幫我生成聖誕節的食譜')
         ]
-    elif globals.mealTypeClick == 1:
-        reply = cuisineType()
-    elif '為你生成' in msg :
-        reply = [
-                TextSendMessage(
-                    text = '以下是'+globals.cuisineType+globals.mealType+'的食譜'
-                ),
-                generateRecipe('幫我生成一個'+ globals.cuisineType +globals.mealType +'食譜(用繁體中文)')
-        ]
+    
     else:
         reply = TextSendMessage(msg)
         '''

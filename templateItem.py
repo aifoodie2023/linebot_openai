@@ -176,6 +176,9 @@ def askAboutHobby():
 
 def chooseMeal():
     message = [
+        TextSendMessage(
+            text = "請先點要吃哪一餐，再選想吃什麼料理~"
+        ),
         whichMeal(),
         cuisineType()
     ]

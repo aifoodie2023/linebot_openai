@@ -10,3 +10,9 @@ def intitials():
     eatingHabit = ''
     global restriction
     restriction = ''
+    global habitCombine
+    habitCombine = ''
+    global mealType
+    mealType = ''
+    global cuisineType
+    cuisineType = ''

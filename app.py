@@ -11,7 +11,7 @@ from linebot.models import *
 #import from another script
 from responseText import messageApply
 from templateItem import welcomeMessage, eatingHabits, whichMeal, cuisineType, chooseMeal, test, askAboutHobby
-from settingHobby import saveHabit, exportHabit
+from settingHobby import saveHabit, exportHabit, habitCombine
 import globals
 #======python的函數庫==========
 import tempfile, os
@@ -72,7 +72,7 @@ def lineBotApiReply(evemt, message):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = messageApply(event.message.text)
-    if  '個人喜好' in msg :
+    if  msg == '個人喜好' :
         reply = askAboutHobby()
     elif msg == '料理生成' :
         reply = chooseMeal()
@@ -94,7 +94,7 @@ def handle_message(event):
                 TextSendMessage(
                     text = exportHabit()
                 ),
-                generateRecipe(globals.ingredients+'，請幫我生成相關的食譜')
+                generateRecipe(globals.habitCombine +'，'+ globals.ingredients+'，請幫我生成相關的食譜')
          ]
     else:
         reply = TextSendMessage(msg)

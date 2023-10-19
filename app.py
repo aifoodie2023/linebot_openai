@@ -91,25 +91,22 @@ def handle_message(event):
                 TextSendMessage(
                     text = '#剛剛輸入:' + globals.ingredients
                 ),
-                TextSendMessage(
-                    text = exportHabit()
-                ),
                 generateRecipe(globals.ingredients+'，請幫我生成相關的食譜')
          ]
     elif msg == '節慶食譜':
         reply = [
-                TextSendMessage(
+               TextSendMessage(
                     text = "以下是聖誕節的食譜"
                 ),
-                generateRecipe(globals.ingredients+'，請幫我生成聖誕節的食譜')
-                ]
+                generateRecipe('請幫我生成聖誕節的食譜')
+        ]
     elif '為你生成' in msg :
         reply = [
                 TextSendMessage(
                     text = '以下是'+globals.cuisineType+globals.mealType+'的食譜'
                 ),
                 generateRecipe('幫我生成一個'+ globals.cuisineType +globals.mealType +'食譜(用繁體中文)')
-                ]
+        ]
     else:
         reply = TextSendMessage(msg)
         '''

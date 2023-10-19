@@ -102,7 +102,6 @@ def handle_message(event):
         ]
     elif globals.mealTypeClick == 1:
         reply = cuisineType()
-        globals.mealTypeClick = 0
     elif '為你生成' in msg :
         reply = [
                 TextSendMessage(

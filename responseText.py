@@ -83,21 +83,27 @@ def messageApply(msg):
 #-------------------------------------------------------#
     elif msg == '中式':
         globals.cuisineType = '中式'
+        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '西式':
         globals.cuisineType = '西式'
+        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '日式':
         globals.cuisineType = '日式'
+        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '泰式':
         globals.cuisineType = '泰式'
+        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '法式':
         globals.cuisineType = '法式'
+        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '隨便':
         globals.cuisineType = '隨便'
+        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
 
     return reply

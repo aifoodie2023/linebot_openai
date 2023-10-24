@@ -65,11 +65,31 @@ def messageApply(msg):
     elif msg in meal_type_mapping:
         globals.mealType = meal_type_mapping[msg]
         reply = msg
+
+    elif msg == '中式':
+        globals.cuisineType = '中式'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
+    elif msg == '西式':
+        globals.cuisineType = '西式'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
+    elif msg == '日式':
+        globals.cuisineType = '日式'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
+    elif msg == '泰式':
+        globals.cuisineType = '泰式'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
+    elif msg == '法式':
+        globals.cuisineType = '法式'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
+    elif msg == '隨便':
+        globals.cuisineType = '隨便'
+        reply = '為你生成-'+globals.cuisineType+globals.mealType
+    '''    
     elif msg in cuisine_type_mapping:
         globals.cuisineType = cuisine_type_mapping[msg]    
         reply = f'為你生成-{globals.cuisineType}{globals.mealType}'
 #-------------------------------------------------------#
-    '''
+  
     elif msg == '早餐':
         globals.mealType = '早餐'
     elif msg == '午餐':
@@ -83,6 +103,7 @@ def messageApply(msg):
     elif msg == '飲料':
         globals.mealType = '飲料'
 #-------------------------------------------------------#
+
     elif msg == '中式':
         globals.cuisineType = '中式'
         reply = '為你生成-'+globals.cuisineType+globals.mealType

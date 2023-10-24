@@ -71,6 +71,7 @@ def lineBotApiReply(evemt, message):
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    reply = None  # 在函数外初始化 reply 变量
     msg = messageApply(event.message.text)
 #-------------------------個人喜好----------------------------------------------#
     if  msg == '個人喜好' :

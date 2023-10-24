@@ -83,7 +83,7 @@ def handle_message(event):
         reply = whichMeal()
     elif msg in ['早餐', '午餐', '晚餐', '消夜','點心','飲料']:
         reply = cuisineType()
-    elif '為你生成' in msg :
+    elif msg in ['中式', '西式', '日式', '泰式','法式','隨便']:
         reply = [
                 TextSendMessage(
                     text = '以下是'+globals.cuisineType+globals.mealType+'的食譜'

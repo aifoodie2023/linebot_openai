@@ -64,6 +64,7 @@ def messageApply(msg):
 #-------------------------------------------------------#
     elif msg in meal_type_mapping:
         globals.mealType = meal_type_mapping[msg]
+        reply = msg
     elif msg in cuisine_type_mapping:
         globals.cuisineType = cuisine_type_mapping[msg]    
         reply = f'為你生成-{globals.cuisineType}{globals.mealType}'

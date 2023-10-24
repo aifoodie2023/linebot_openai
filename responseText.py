@@ -62,53 +62,66 @@ def messageApply(msg):
         saveHabit(msg)
         reply='儲存飲食習慣'
 #-------------------------------------------------------#
+    elif msg in meal_type_mapping:
+        globals.mealType = meal_type_mapping[msg]
+    elif msg in cuisine_type_mapping:
+        globals.cuisineType = cuisine_type_mapping[msg]    
+        reply = f'為你生成-{globals.cuisineType}{globals.mealType}'
+#-------------------------------------------------------#
+    '''
     elif msg == '早餐':
         globals.mealType = '早餐'
-        globals.mealTypeClick = 1
     elif msg == '午餐':
         globals.mealType = '午餐'
-        globals.mealTypeClick = 1
     elif msg == '晚餐':
         globals.mealType = '晚餐'
-        globals.mealTypeClick = 1
     elif msg == '消夜':
         globals.mealType = '消夜'
-        globals.mealTypeClick = 1
     elif msg == '點心':
         globals.mealType = '點心'
-        globals.mealTypeClick = 1
     elif msg == '飲料':
         globals.mealType = '飲料'
-        globals.mealTypeClick = 1
 #-------------------------------------------------------#
     elif msg == '中式':
         globals.cuisineType = '中式'
-        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '西式':
         globals.cuisineType = '西式'
-        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '日式':
         globals.cuisineType = '日式'
-        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '泰式':
         globals.cuisineType = '泰式'
-        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '法式':
         globals.cuisineType = '法式'
-        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
     elif msg == '隨便':
         globals.cuisineType = '隨便'
-        globals.mealTypeClick = 0
         reply = '為你生成-'+globals.cuisineType+globals.mealType
-
+'''
     return reply
 
 
 
 def havingIngredient():
     return
+
+meal_type_mapping = {
+    '早餐': '早餐',
+    '午餐': '午餐',
+    '晚餐': '晚餐',
+    '消夜': '消夜',
+    '點心': '點心',
+    '飲料': '飲料',
+}
+
+cuisine_type_mapping = {
+    '中式': '中式',
+    '西式': '西式',
+    '日式': '日式',
+    '泰式': '泰式',
+    '法式': '法式',
+    '隨便': '隨便',
+}

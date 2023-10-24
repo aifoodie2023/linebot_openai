@@ -77,9 +77,9 @@ def handle_message(event):
         reply = askAboutHobby()
 #-------------------------料理生成----------------------------------------------#
     elif msg == '料理生成' :
-        reply = chooseMeal()
-    #elif globals.mealTypeClick == 1:
-    #    reply = cuisineType()
+        reply = whichMeal()
+    elif msg in ['早餐', '午餐', '晚餐', '消夜','點心','飲料']:
+        reply = cuisineType()
     elif '為你生成' in msg :
         reply = [
                 TextSendMessage(
@@ -103,6 +103,9 @@ def handle_message(event):
                 ),
                 TextSendMessage(
                     text = '#剛剛輸入:' + globals.ingredients
+                ),
+                TextSendMessage(
+                    text = exportHabit()
                 ),
                 generateRecipe(globals.ingredients+'，請幫我生成相關的食譜')
          ]

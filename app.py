@@ -120,7 +120,9 @@ def handle_message(event):
                 ),
                 generateRecipe('請幫我生成聖誕節的食譜')
         ]
-    
+#-------------------------食材管理----------------------------------------------#
+    elif msg == '食材管理':
+        reply = TextSendMessage('食材管理 *開發中*')
     else:
         reply = TextSendMessage(msg)
         '''

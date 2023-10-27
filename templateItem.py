@@ -67,42 +67,42 @@ def whichMeal():
         template=ImageCarouselTemplate(
         columns=[
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/d1YQFhTg/breakfast.png',
+                image_url='https://i.postimg.cc/rmmYSYDy/breakfast.png',
                 action=MessageAction(
                     label='早餐',
                     text='早餐'
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/59HJr5Gj/lunch.png',
+                image_url='https://i.postimg.cc/Qtxvfdy3/lunch.png',
                 action=MessageAction(
                     label='午餐',
                     text='午餐'
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/3RZHX9bx/dinner.png',
+                image_url='https://i.postimg.cc/hPfcSpMB/dinner.png',
                 action=MessageAction(
                     label='晚餐',
                     text='晚餐'
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/9085S023/nightsnack.png',
+                image_url='https://i.postimg.cc/9MLH2770/nightsnack.png',
                 action=MessageAction(
                     label='消夜',
                     text='消夜'
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/3NJQnpPC/snack.png',
+                image_url='https://i.postimg.cc/wvqYnV3n/dessert.png',
                 action=MessageAction(
                     label='點心',
                     text='點心'
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/NGrnvdx9/drink.png',
+                image_url='https://i.postimg.cc/TPX6JGxd/drink.png',
                 action=MessageAction(
                     label='飲料',
                     text='飲料'
@@ -119,42 +119,42 @@ def cuisineType():
         template=ImageCarouselTemplate(
             columns=[
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/7Z4ybFLT/chinese.png',
+                    image_url='https://i.postimg.cc/zBc2pShC/chinese.png',
                     action=MessageAction(
                         label='中式',
                         text='中式'
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/9X9STLKP/american.png',
+                    image_url='https://i.postimg.cc/152P4wYN/american.png',
                     action=MessageAction(
                         label='西式',
                         text='西式'
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/Lsf4Gthz/japanese.png',
+                    image_url='https://i.postimg.cc/zGhNhv92/japanese.png',
                     action=MessageAction(
                         label='日式',
                         text='日式'
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/vZCHPq8Y/thais.png',
+                    image_url='https://i.postimg.cc/D0mkwwrg/thai.png',
                     action=MessageAction(
                         label='泰式',
                         text='泰式'
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/1XNfRk3j/french.png',
+                    image_url='https://i.postimg.cc/QMkr6PNp/french.png',
                     action=MessageAction(
                         label='法式',
                         text='法式'
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/VLGNts3b/random.png',
+                    image_url='https://i.postimg.cc/QMqRgTSm/random.png',
                     action=MessageAction(
                         label='隨便',
                         text='隨便'

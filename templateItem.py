@@ -41,7 +41,7 @@ def eatingHabits():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url ='https://steam.oxxostudio.tw/download/python/line-template-message-demo.jpg',
+                    thumbnail_image_url ='https://i.postimg.cc/SsM6BJx9/habit.png',
                     title = "請輸入您的個人喜好",
                     text ="請點你的飲食習慣",
                     actions =[
@@ -67,42 +67,42 @@ def whichMeal():
         template=ImageCarouselTemplate(
         columns=[
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/rmmYSYDy/breakfast.png',
+                image_url='https://i.postimg.cc/85DBMTHg/breakfast.png',
                 action=MessageAction(
                     label='早餐',
                     text='早餐'
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/Qtxvfdy3/lunch.png',
+                image_url='https://i.postimg.cc/9fHGHcsw/lunch.png',
                 action=MessageAction(
                     label='午餐',
                     text='午餐'
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/hPfcSpMB/dinner.png',
+                image_url='https://i.postimg.cc/2SsxjQL6/dinner.png',
                 action=MessageAction(
                     label='晚餐',
                     text='晚餐'
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/9MLH2770/nightsnack.png',
+                image_url='https://i.postimg.cc/wM5BJd0Z/nightsnack.png',
                 action=MessageAction(
                     label='消夜',
                     text='消夜'
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/wvqYnV3n/dessert.png',
+                image_url='https://i.postimg.cc/285G08fz/dessert.png',
                 action=MessageAction(
                     label='點心',
                     text='點心'
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://i.postimg.cc/TPX6JGxd/drink.png',
+                image_url='https://i.postimg.cc/7hZ3tXdB/drink.png',
                 action=MessageAction(
                     label='飲料',
                     text='飲料'
@@ -119,42 +119,42 @@ def cuisineType():
         template=ImageCarouselTemplate(
             columns=[
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/zBc2pShC/chinese.png',
+                    image_url='https://i.postimg.cc/FRZbxwWd/chinese.png',
                     action=MessageAction(
                         label='中式',
                         text='中式'
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/152P4wYN/american.png',
+                    image_url='https://i.postimg.cc/SNtr3Fyc/american.png',
                     action=MessageAction(
                         label='西式',
                         text='西式'
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/zGhNhv92/japanese.png',
+                    image_url='https://i.postimg.cc/1RvcVhVb/japanese.png',
                     action=MessageAction(
                         label='日式',
                         text='日式'
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/D0mkwwrg/thai.png',
+                    image_url='https://i.postimg.cc/tgdFXLHS/thai.png',
                     action=MessageAction(
                         label='泰式',
                         text='泰式'
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/QMkr6PNp/french.png',
+                    image_url='https://i.postimg.cc/WzYMBgPs/french.png',
                     action=MessageAction(
                         label='法式',
                         text='法式'
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.postimg.cc/QMqRgTSm/random.png',
+                    image_url='https://i.postimg.cc/MKX0yPyH/random.png',
                     action=MessageAction(
                         label='隨便',
                         text='隨便'

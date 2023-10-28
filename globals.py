@@ -7,9 +7,9 @@ def intitials():
     global ingredients
     ingredients = ''
     global eatingHabit
-    eatingHabit = ''
+    eatingHabit = '-'
     global restriction
-    restriction = ''
+    restriction = '-'
     global habitCombine
     habitCombine = ''
     global mealType

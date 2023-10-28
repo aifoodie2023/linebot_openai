@@ -167,6 +167,9 @@ def cuisineType():
 
 def askAboutHobby():
     message = [
+        TextSendMessage(
+                    text = '#先前飲食習慣:'+globals.habitCombine
+                ),
         eatingHabits(),
         TextSendMessage(
             text = "請輸入您不吃的食物，(不吃...)"

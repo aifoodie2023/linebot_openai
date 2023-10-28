@@ -1,7 +1,7 @@
 
 #from app import eatingHabits
 #from app import lineBotApiReply
-from settingHobby import saveHabit, dietaryRestriction, saveIngredients
+from settingHobby import saveHabit, dietaryRestriction, saveIngredients,exportHabit
 import globals
 from templateItem import welcomeMessage, eatingHabits, whichMeal, cuisineType, chooseMeal, test, askAboutHobby
 #from generateRecipe import generateRecipe
@@ -106,6 +106,7 @@ def messageApply(msg):
         globals.cuisineType = '隨便'
         reply = '為你生成-'+globals.cuisineType+globals.mealType
 '''
+    exportHabit()
     return reply
 
 

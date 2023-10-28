@@ -88,7 +88,7 @@ def handle_message(event):
                 TextSendMessage(
                     text = '以下是'+globals.cuisineType+globals.mealType+'的食譜'
                 ),
-                generateRecipe('幫我生成一個'+ globals.cuisineType +globals.mealType +'食譜(用繁體中文)')
+                generateRecipe(globals.habitCombine+'幫我生成一個'+ globals.cuisineType +globals.mealType +'食譜(用繁體中文)')
         ]
 #-------------------------隨機生成----------------------------------------------#
     elif msg == '隨機生成' :
@@ -96,7 +96,7 @@ def handle_message(event):
             TextSendMessage(
                     text = "隨機生成食譜如下"
             ),
-            generateRecipe('幫我隨機生成一個食譜(用繁體中文)')
+            generateRecipe(globals.habitCombine+'幫我隨機生成一個食譜(用繁體中文)')
         ]
 #-------------------------輸入食材---------------------------------------------#
     elif msg == '以下是依據您輸入的食材製作出來的食譜' :
@@ -108,9 +108,9 @@ def handle_message(event):
                     text = '#剛剛輸入:' + globals.ingredients
                 ),
                 TextSendMessage(
-                    text = exportHabit()
+                    text = globals.habitCombine
                 ),
-                generateRecipe(globals.ingredients+'，請幫我生成相關的食譜')
+                generateRecipe(globals.ingredients+globals.habitCombine+'，請幫我生成相關的食譜')
          ]
 #-------------------------節慶食譜----------------------------------------------#
     elif msg == '節慶食譜':
@@ -118,7 +118,7 @@ def handle_message(event):
                TextSendMessage(
                     text = "以下是聖誕節的食譜"
                 ),
-                generateRecipe('請幫我生成聖誕節的食譜')
+                generateRecipe(globals.habitCombine+'請幫我生成聖誕節的食譜')
         ]
 #-------------------------食材管理----------------------------------------------#
     elif msg == '食材管理':

@@ -52,11 +52,12 @@ def saveIngredients (message):
 def exportHabit():
     text = '#飲食習慣:'
     if globals.eatingHabit:
-        text += f'你{globals.eatingHabit}'
+        text += f'我{globals.eatingHabit}'
     if globals.eatingHabit and globals.restriction:
         text += ','
     if globals.restriction:
-        text += f'你{globals.restriction}'
+        text += f'我{globals.restriction}'
+    globals.habitCombine = text
     return text
 
 def habitCombine():

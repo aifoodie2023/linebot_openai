@@ -50,7 +50,7 @@ def saveIngredients (message):
     return  globals.ingredients
 
 def exportHabit():
-    text = '#飲食習慣:'
+    text = ''
     if globals.eatingHabit:
         text += f'我{globals.eatingHabit}'
     if globals.eatingHabit and globals.restriction:

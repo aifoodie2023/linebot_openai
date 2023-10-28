@@ -1,5 +1,6 @@
 
 from linebot.models import *
+import globals
 
 def welcomeMessage():
     message = [
